@@ -1,0 +1,201 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #111;
+}
+
+/* ===================== main variable =====================*/
+:root {
+    --main-color: #06F8C3;
+    --main-color-alt: #04dfaf;
+    --bg-color: #333
+}
+
+/*  ===================== reset =====================*/
+input {
+    border: 0;
+    outline: 0;
+    color: #fff;
+}
+
+/* ===================== reusable ===================== */
+main {
+    height: 100vh;
+}
+
+button {
+    border: 0;
+    background-color: var(--main-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 0 5px var(--main-color),
+        0 0 10px var(--main-color);
+}
+
+
+/* ===================== title ===================== */
+section h1 {
+    text-align: center;
+    font-size: 60px;
+    color: var(--main-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0 0 3px var(--main-color),
+        0 0 5px var(--main-color);
+    margin-bottom: 1rem;
+}
+
+section .input-section {
+
+    border: 2px solid #394042;
+
+    padding: 0.5rem 0 0.5rem 0.75rem;
+    height: 50px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+section .input-section form {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+section .input-section input {
+    background-color: transparent;
+    font-size: 18px;
+    width: 100%;
+    color: gray;
+    height: 100%;
+    caret-color: var(--main-color);
+}
+
+section .input-section input::selection {
+    color: var(--main-color);
+    background-color: black;
+}
+
+.list-task li {
+    background-color: #1C1F20;
+    color: gray;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.list-task li .task,
+.list-task li .done-task {
+    color: var(--main-color);
+    font-size: 30px;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    -ms-transition: transform 0.2s;
+    -o-transition: transform 0.2s;
+}
+
+.list-task li div i:hover{
+    background-color: red;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.list-task li .done-task {
+    display: none;
+}
+
+.list-task .delete {
+    margin-left: auto;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+.list-task .delete:hover {
+    color: red;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+p,
+.list-task li .task,
+.list-task li .done-task,
+.list-task li .check-icon,
+.list-task .delete {
+    background-color: transparent;
+}
+
+.check-icon.done .task {
+    display: none;
+}
+
+.check-icon.done .done-task {
+    display: block;
+}
+
+.check-icon.done+p {
+    text-decoration: line-through var(--main-color) 2px;
+}
+
+form .tool-tip {
+    display: none;
+}
+
+form .tool-tip.show {
+    display: block;
+    color: var(--main-color);
+    font-size: 17px;
+    font-weight: bold;
+    background-color: #222;
+    padding: 1rem 2rem;
+    position: absolute;
+    top: -80px;
+    filter: drop-shadow(0 0 5px var(--main-color)) blur(0.5px);
+    -webkit-filter: drop-shadow(0 0 5px var(--main-color)) blur(0.5px);
+}
+
+form .tool-tip.show ::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 20%;
+    border: 10px solid;
+    border-color: var(--main-color) transparent transparent transparent;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+
+}

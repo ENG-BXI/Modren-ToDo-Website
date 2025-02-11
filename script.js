@@ -34,15 +34,12 @@ function addTask(e) {
 }
 function createListItem(value, index, isDone) {
   let newListItem = document.createElement("li");
-  newListItem.onclick = function () {
-    check(index);
-  };
   newListItem.innerHTML = `
                <div class="check-icon check-icon-${index} ${
     isDone ? "done" : ""
   }">
-                <i onclick="check(${index} )" class="task ri-checkbox-blank-circle-line"></i>
-                <i onclick="check(${index} )" class="done-task ri-checkbox-circle-fill"></i>
+                <i onclick="check(${index})" class="task ri-checkbox-blank-circle-line"></i>
+                <i onclick="check(${index})" class="done-task ri-checkbox-circle-fill"></i>
               </div>
               <p>${value}</p>
               <i onclick="deleteTask(${index})" class="delete ri-delete-bin-6-line"></i>
